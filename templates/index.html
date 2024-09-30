@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Estamos</title>
+    <style>
+        .emoji-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .emoji-container div {
+            text-align: center;
+        }
+        .emoji {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+        .counter {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+        .reset-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Como Estamos</h1>
+    <div class="emoji-container">
+        <div>
+            <a href="{{ url_for('click', indice=0) }}">
+                <img src="https://i.pinimg.com/564x/a8/15/d6/a815d6f2edebb1eae33c8f6a7411c188.jpg" alt="Muito Triste" class="emoji">
+            </a>
+            <div class="counter">{{ cliques[0] }}</div>
+            <a href="{{ url_for('undo', indice=0) }}">Desfazer</a>
+        </div>
+        <div>
+            <a href="{{ url_for('click', indice=1) }}">
+                <img src="https://i.pinimg.com/564x/89/06/95/890695f8b0cfde4a7f8e0c1b5b10d77d.jpg" alt="Triste" class="emoji">
+            </a>
+            <div class="counter">{{ cliques[1] }}</div>
+            <a href="{{ url_for('undo', indice=1) }}">Desfazer</a>
+        </div>
+        <div>
+            <a href="{{ url_for('click', indice=2) }}">
+                <img src="https://i.pinimg.com/564x/07/9d/42/079d42dd361ae89ea0dde1e6e60d2d2d.jpg" alt="Neutro" class="emoji">
+            </a>
+            <div class="counter">{{ cliques[2] }}</div>
+            <a href="{{ url_for('undo', indice=2) }}">Desfazer</a>
+        </div>
+        <div>
+            <a href="{{ url_for('click', indice=3) }}">
+                <img src="https://i.pinimg.com/564x/0c/cb/d8/0ccbd8b9fa942ceed47f0af8ced48ffb.jpg" alt="Feliz" class="emoji">
+            </a>
+            <div class="counter">{{ cliques[3] }}</div>
+            <a href="{{ url_for('undo', indice=3) }}">Desfazer</a>
+        </div>
+        <div>
+            <a href="{{ url_for('click', indice=4) }}">
+                <img src="https://i.pinimg.com/564x/e2/6d/74/e26d74169da53cd2afeb1a6e34172ea7.jpg" alt="Muito Feliz" class="emoji">
+            </a>
+            <div class="counter">{{ cliques[4] }}</div>
+            <a href="{{ url_for('undo', indice=4) }}">Desfazer</a>
+        </div>
+    </div>
+    <a href="{{ url_for('reset') }}" class="reset-button">Resetar</a>
+</body>
+</html>
